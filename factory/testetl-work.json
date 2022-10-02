@@ -1,0 +1,9 @@
+{
+	"name": "testetl-work",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "392f9c1e-77ff-49d9-a8f8-e1f717f9488c",
+		"tenantId": "0398ddf3-4b57-40ba-aacf-f4104d31082e"
+	}
+}
