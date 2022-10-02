@@ -1,0 +1,16 @@
+{
+	"name": "AzureBatch1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBatch",
+		"typeProperties": {
+			"batchUri": "etlpreprocess.eastus.batch.azure.com",
+			"poolName": "etlpool",
+			"accountName": "ETLWork",
+			"linkedServiceName": {
+				"referenceName": "AzureBlobStorage1",
+				"type": "LinkedServiceReference"
+			}
+		}
+	}
+}
