@@ -333,46 +333,10 @@
 			"properties": {
 				"activities": [
 					{
-						"name": "PreProcess",
-						"type": "Custom",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"command": "helloworld.exe",
-							"resourceLinkedService": {
-								"referenceName": "AzureBlobStorage1",
-								"type": "LinkedServiceReference"
-							},
-							"folderPath": "etlbatch",
-							"referenceObjects": {
-								"linkedServices": [],
-								"datasets": []
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "etlpreprocess",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
 						"name": "Port to Infiniport",
 						"description": "This steps port to infiniport",
 						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "PreProcess",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
+						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -568,8 +532,6 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]",
-				"[concat(variables('factoryId'), '/linkedServices/etlpreprocess')]",
 				"[concat(variables('factoryId'), '/datasets/PreProcessJson')]",
 				"[concat(variables('factoryId'), '/datasets/InfiniceptTransactionContract')]"
 			]
