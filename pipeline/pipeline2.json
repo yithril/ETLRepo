@@ -32,9 +32,16 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Copy data2",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Custom1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -105,7 +112,7 @@
 									"path": "$['ReportGenerated']"
 								},
 								"sink": {
-									"path": "$['TransactionType']"
+									"path": "$['TransactionAmount']"
 								}
 							},
 							{
@@ -113,7 +120,7 @@
 									"path": "$['ReportGeneratedTime']"
 								},
 								"sink": {
-									"path": "$['TransactionDate']"
+									"path": "$['Currency']"
 								}
 							},
 							{
@@ -121,7 +128,7 @@
 									"path": "$['TransactionRecordType']"
 								},
 								"sink": {
-									"path": "$['TransactionAmount']"
+									"path": "$['Network']"
 								}
 							},
 							{
@@ -129,7 +136,39 @@
 									"path": "$['SubmissionDate']"
 								},
 								"sink": {
-									"path": "$['Currency']"
+									"path": "$['CardPresentType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['PID']"
+								},
+								"sink": {
+									"path": "$['InterchangeFee']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['PIDShort']"
+								},
+								"sink": {
+									"path": "$['NetworkFee']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SubmissionNumber']"
+								},
+								"sink": {
+									"path": "$['ProcessorFee']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['RecordNumber']"
+								},
+								"sink": {
+									"path": "$['AssessmentFee']"
 								}
 							},
 							{
@@ -137,15 +176,39 @@
 									"path": "$['EntityType']"
 								},
 								"sink": {
-									"path": "$['CardPresentType']"
+									"path": "$['CommissionFee']"
 								}
 							},
 							{
 								"source": {
-									"path": "$['AccountNumber']"
+									"path": "$['EntityNumber']"
 								},
 								"sink": {
-									"path": "$['CommissionFee']"
+									"path": "$['ProcessorMID']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['PresentmentCurrency']"
+								},
+								"sink": {
+									"path": "$['TransactionType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['MerchantOrderNumber']"
+								},
+								"sink": {
+									"path": "$['ProcessorTransactionId']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['RDFINumber']"
+								},
+								"sink": {
+									"path": "$['SettlementDate']"
 								}
 							}
 						]
