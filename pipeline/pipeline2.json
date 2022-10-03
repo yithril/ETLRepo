@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Custom1",
+				"name": "PreProcess",
 				"type": "Custom",
 				"dependsOn": [],
 				"policy": {
@@ -32,11 +32,12 @@
 				}
 			},
 			{
-				"name": "Copy data2",
+				"name": "Port to Infiniport",
+				"description": "This steps port to infiniport",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Custom1",
+						"activity": "PreProcess",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -55,7 +56,6 @@
 						"type": "JsonSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
