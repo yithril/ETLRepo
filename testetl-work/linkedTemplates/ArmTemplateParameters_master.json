@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "testetl-work"
+		},
+		"AzureBatch1_accessKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"etlpreprocess_accessKey": {
+			"value": ""
+		},
+		"AzureBatch1_properties_typeProperties_batchUri": {
+			"value": "https://etlpreprocess.eastus.batch.azure.com"
+		},
+		"AzureBatch1_properties_typeProperties_poolName": {
+			"value": "etlpool"
+		},
+		"AzureBatch1_properties_typeProperties_accountName": {
+			"value": "ETLWork"
+		},
+		"etlpreprocess_properties_typeProperties_batchUri": {
+			"value": "https://etlpreprocess.eastus.batch.azure.com"
+		},
+		"etlpreprocess_properties_typeProperties_poolName": {
+			"value": "etlpool"
+		},
+		"etlpreprocess_properties_typeProperties_accountName": {
+			"value": "etlpreprocess"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
