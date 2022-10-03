@@ -1,0 +1,73 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "collation"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"TransactionDate": {
+					"type": "string"
+				},
+				"AcquirerReferenceNumber": {
+					"type": "string"
+				},
+				"AuthorizationCode": {
+					"type": "string"
+				},
+				"AuthorizationAmount": {
+					"type": "string"
+				},
+				"TransactionAmount": {
+					"type": "string"
+				},
+				"Currency": {
+					"type": "string"
+				},
+				"Network": {
+					"type": "string"
+				},
+				"CardPresentType": {
+					"type": "string"
+				},
+				"InterchangeFee": {
+					"type": "string"
+				},
+				"NetworkFee": {
+					"type": "string"
+				},
+				"ProcessorFee": {
+					"type": "string"
+				},
+				"AssessmentFee": {
+					"type": "string"
+				},
+				"CommissionFee": {
+					"type": "string"
+				},
+				"ProcessorMID": {
+					"type": "string"
+				},
+				"TransactionType": {
+					"type": "string"
+				},
+				"ProcessorTransactionId": {
+					"type": "string"
+				},
+				"SettlementDate": {
+					"type": "string"
+				}
+			}
+		}
+	}
+}
