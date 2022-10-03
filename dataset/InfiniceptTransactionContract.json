@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "InfiniceptTransactionContract",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",

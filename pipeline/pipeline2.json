@@ -15,6 +15,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"command": "helloworld.exe",
+					"resourceLinkedService": {
+						"referenceName": "AzureBlobStorage1",
+						"type": "LinkedServiceReference"
+					},
+					"folderPath": "etlbatch",
 					"referenceObjects": {
 						"linkedServices": [],
 						"datasets": []
@@ -24,6 +30,139 @@
 					"referenceName": "etlpreprocess",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['RecordType']"
+								},
+								"sink": {
+									"path": "$['TransactionDate']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['CompanyId']"
+								},
+								"sink": {
+									"path": "$['AcquirerReferenceNumber']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ReportDateFrom']"
+								},
+								"sink": {
+									"path": "$['AuthorizationCode']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ReportDateTo']"
+								},
+								"sink": {
+									"path": "$['AuthorizationAmount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ReportGenerated']"
+								},
+								"sink": {
+									"path": "$['TransactionType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ReportGeneratedTime']"
+								},
+								"sink": {
+									"path": "$['TransactionDate']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['TransactionRecordType']"
+								},
+								"sink": {
+									"path": "$['TransactionAmount']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['SubmissionDate']"
+								},
+								"sink": {
+									"path": "$['Currency']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['EntityType']"
+								},
+								"sink": {
+									"path": "$['CardPresentType']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['AccountNumber']"
+								},
+								"sink": {
+									"path": "$['CommissionFee']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "PreProcessJson",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "InfiniceptTransactionContract",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
