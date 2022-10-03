@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "PreProcessJson",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -16,123 +16,95 @@
 		"schema": {
 			"type": "object",
 			"properties": {
-				"header": {
-					"type": "object",
-					"properties": {
-						"RecordType": {
-							"type": "string"
-						},
-						"CompanyId": {
-							"type": "string"
-						},
-						"ReportDateFrom": {
-							"type": "string"
-						},
-						"ReportDateTo": {
-							"type": "string"
-						},
-						"ReportGenerated": {
-							"type": "string"
-						},
-						"ReportGeneratedTime": {
-							"type": "string"
-						}
-					}
+				"RecordType": {
+					"type": "string"
 				},
-				"transaction": {
-					"type": "object",
-					"properties": {
-						"TransactionRecordType": {
-							"type": "string"
-						},
-						"SubmissionDate": {
-							"type": "string"
-						},
-						"PID": {
-							"type": "string"
-						},
-						"PIDShort": {
-							"type": "string"
-						},
-						"SubmissionNumber": {
-							"type": "string"
-						},
-						"RecordNumber": {
-							"type": "string"
-						},
-						"EntityType": {
-							"type": "string"
-						},
-						"EntityNumber": {
-							"type": "string"
-						},
-						"PresentmentCurrency": {
-							"type": "string"
-						},
-						"MerchantOrderNumber": {
-							"type": "string"
-						},
-						"RDFINumber": {
-							"type": "string"
-						},
-						"AccountNumber": {
-							"type": "string"
-						},
-						"ExpirationDate": {
-							"type": "string"
-						},
-						"Amount": {
-							"type": "string"
-						},
-						"MOP": {
-							"type": "string"
-						},
-						"ActionCode": {
-							"type": "string"
-						},
-						"AuthDate": {
-							"type": "string"
-						},
-						"AuthCode": {
-							"type": "string"
-						},
-						"AuthResponseCode": {
-							"type": "string"
-						},
-						"Trace": {
-							"type": "string"
-						},
-						"ConsumerCountryCode": {
-							"type": "string"
-						},
-						"Transactionype": {
-							"type": "string"
-						},
-						"MCC": {
-							"type": "string"
-						},
-						"TokenIndicator": {
-							"type": "string"
-						},
-						"RecordType": {
-							"type": "null"
-						},
-						"CompanyId": {
-							"type": "null"
-						},
-						"ReportDateFrom": {
-							"type": "null"
-						},
-						"ReportDateTo": {
-							"type": "null"
-						},
-						"ReportGenerated": {
-							"type": "null"
-						},
-						"ReportGeneratedTime": {
-							"type": "null"
-						}
-					}
+				"CompanyId": {
+					"type": "string"
+				},
+				"ReportDateFrom": {
+					"type": "string"
+				},
+				"ReportDateTo": {
+					"type": "string"
+				},
+				"ReportGenerated": {
+					"type": "string"
+				},
+				"ReportGeneratedTime": {
+					"type": "string"
+				},
+				"TransactionRecordType": {
+					"type": "string"
+				},
+				"SubmissionDate": {
+					"type": "string"
+				},
+				"PID": {
+					"type": "string"
+				},
+				"PIDShort": {
+					"type": "string"
+				},
+				"SubmissionNumber": {
+					"type": "string"
+				},
+				"RecordNumber": {
+					"type": "string"
+				},
+				"EntityType": {
+					"type": "string"
+				},
+				"EntityNumber": {
+					"type": "string"
+				},
+				"PresentmentCurrency": {
+					"type": "string"
+				},
+				"MerchantOrderNumber": {
+					"type": "string"
+				},
+				"RDFINumber": {
+					"type": "string"
+				},
+				"AccountNumber": {
+					"type": "string"
+				},
+				"ExpirationDate": {
+					"type": "string"
+				},
+				"Amount": {
+					"type": "string"
+				},
+				"MOP": {
+					"type": "string"
+				},
+				"ActionCode": {
+					"type": "string"
+				},
+				"AuthDate": {
+					"type": "string"
+				},
+				"AuthCode": {
+					"type": "string"
+				},
+				"AuthResponseCode": {
+					"type": "string"
+				},
+				"Trace": {
+					"type": "string"
+				},
+				"ConsumerCountryCode": {
+					"type": "string"
+				},
+				"Transactionype": {
+					"type": "string"
+				},
+				"MCC": {
+					"type": "string"
+				},
+				"TokenIndicator": {
+					"type": "string"
 				}
 			}
 		}
